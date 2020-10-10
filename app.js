@@ -16,9 +16,16 @@ function middleware(req, res, next) {
 }
 
 app.post('/path', (req, res) => {
+  console.log('---')
+  console.log('-- Host')
+  console.log(req.hostname)
+  console.log('-- Headers')
   console.log(req.headers)
+  console.log('-- Query Params')
   console.log(req.query)
+  console.log('-- rawBody')
   console.log(req.rawBody)
+  console.log('---')
 
   const data = { ok: true }
   res.send(JSON.stringify(data))
