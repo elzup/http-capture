@@ -22,6 +22,7 @@ app.use((req, res, next) => {
     console.log('---')
     next()
   })
+  res.send('ok')
 })
 
 app.listen(port, () => {
