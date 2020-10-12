@@ -2,13 +2,12 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-app.use(express.text())
-app.use(middleware)
-
-function middleware(req, res, next) {
+app.use((req, res, next) => {
   console.log('---')
   console.log('-- Host')
   console.log(req.hostname)
+  console.log('-- Method')
+  console.log(req.method)
   console.log('-- Headers')
   console.log(req.headers)
   console.log('-- Query Params')
@@ -23,7 +22,7 @@ function middleware(req, res, next) {
     console.log('---')
     next()
   })
-}
+})
 
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`)
