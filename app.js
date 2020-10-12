@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const port = 3000
 
 app.use((req, res, next) => {
   console.log('---')
@@ -25,6 +24,4 @@ app.use((req, res, next) => {
   res.send('ok')
 })
 
-app.listen(port, () => {
-  console.log(`app listening at http://localhost:${port}`)
-})
+exports.default = app
