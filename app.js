@@ -21,7 +21,10 @@ app.use((req, res, next) => {
     console.log('---')
     next()
   })
-  res.send('ok')
+  res.json({
+    status: 200,
+    message: 'OK',
+  })
 })
 
 exports.default = app
